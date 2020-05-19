@@ -38,8 +38,8 @@ sec = current_time.second
 time = 0
 
 while True:
-    while (hour >= 16 and hour <= 16) and (mins >= 0 and mins <= 20):
-        if time == time2 + 1:
+    while (hour>=HourtobeOpened and hour<=HourtobeClosed):
+        if time == time2 + 5:
             frame = Frame()
             img = frame.Mainfunc()
             # img =CaptureCameraFrames.Main()
