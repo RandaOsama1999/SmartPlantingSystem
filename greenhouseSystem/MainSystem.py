@@ -63,7 +63,7 @@ while True:
                 stage = 1
                 # Arduino_Serial.write('0'.encode())
             res=results()
-            res.inserttestingthreshold(datetime, stage, ratio_red)
+            res.inserttestingthreshold(datetime, stage, ratio_green)
             sens=sensor()
             sens.insertsensorreadings(Arduino_Serial2, datetime, landownerid)
             # cv2.waitKey(0)
