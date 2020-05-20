@@ -4,7 +4,7 @@ from ClassDatabase import sql
 class results:
     Land_ID = 1
 
-    def inserttestingthreshold(self, datetime,stage,ratio_red):
+    def inserttestingthreshold(self, datetime,stage,ratio_green):
         database = sql()
         con, cursor = database.connect()
         try:
@@ -16,7 +16,7 @@ class results:
             if cursor.rowcount == 0:
                 cursor = con.cursor()
                 mySql_insert_query = """INSERT INTO testing_threshold (Land_ID,Stage_ID,Percentage,Date) VALUES ( %s, %s,%s, %s)"""
-                insert_blob_tuple = (results.Land_ID, stage, ratio_red, date)
+                insert_blob_tuple = (results.Land_ID, stage, ratio_green, date)
                 result = cursor.execute(mySql_insert_query, insert_blob_tuple)
                 con.commit()
             else:
@@ -34,7 +34,7 @@ class results:
                 if (no != 0):
                     cursor = con.cursor()
                     mySql_insert_query = """INSERT INTO testing_threshold (Land_ID,Stage_ID,Percentage,Date) VALUES ( %s, %s,%s, %s)"""
-                    insert_blob_tuple = (results.Land_ID, stage, ratio_red, date)
+                    insert_blob_tuple = (results.Land_ID, stage, ratio_green, date)
                     result = cursor.execute(mySql_insert_query, insert_blob_tuple)
                     con.commit()
         except mysql.connector.Error as error:
