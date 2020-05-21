@@ -36,4 +36,5 @@ if __name__ == '__main__':
     labels = labels.numpy()
 
     predicted_labels = np.argmax(predictions, axis = 1)
-    print((predicted_labels == labels ).sum().item()/ len(predicted_labels))
+    accuracy = accuracy_score(labels, predicted_labels)
+    print(accuracy)
