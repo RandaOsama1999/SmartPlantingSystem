@@ -10,6 +10,8 @@ import seaborn as sns
 import matplotlib.pyplot as plt
 from sklearn.metrics import auc,roc_curve
 from math import floor
+from sklearn.metrics import accuracy_score
+
 
 directory_root = '/content/drive/My Drive/PlantDiseases/'
 path = Path(directory_root)
