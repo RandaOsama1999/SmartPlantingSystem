@@ -20,8 +20,8 @@ def load_data(datasettype):
         img = cv2.imread(file)
         img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
         resized_img = resize(img, (128, 64))
-        fd = hog(resized_img, orientations=8, pixels_per_cell=(16, 16),
-                            cells_per_block=(4, 4), multichannel=True)
+        fd = hog(resized_img, orientations=8, pixels_per_cell=(8, 8),
+                            cells_per_block=(2, 2), multichannel=True)
         arr.append(fd)
     return arr
 
